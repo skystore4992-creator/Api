@@ -5,7 +5,7 @@ const features = [
   {
     icon: Sparkles,
     title: "ឆ្លាតវៃខ្លាំង",
-    desc: "ដំណើរការដោយ OpenAI GPT-4o ជាមួយ persona ThatGPT-5.5 — ឆ្លើយត្រឹមត្រូវ ច្បាស់លាស់ ជាភាសាខ្មែរ ឬភាសាដទៃ។",
+    desc: "ដំណើរការដោយ Google Gemini (ឥតគិតថ្លៃ) ជាមួយ persona ThatGPT-5.5 — ឆ្លើយត្រឹមត្រូវ ច្បាស់លាស់ ជាភាសាខ្មែរ ឬភាសាដទៃ។",
   },
   {
     icon: Eye,
@@ -27,8 +27,8 @@ const steps = [
   },
   {
     icon: KeyRound,
-    title: "បញ្ចូល Token",
-    desc: "បន្ថែម TELEGRAM_BOT_TOKEN ទៅក្នុង Environment Variables របស់ Project។",
+    title: "បញ្ចូល Keys",
+    desc: "បន្ថែម TELEGRAM_BOT_TOKEN និង GOOGLE_GENERATIVE_AI_API_KEY (ឥតគិតថ្លៃ ពី Google AI Studio) ទៅ Environment Variables។",
   },
   {
     icon: Send,

@@ -42,8 +42,12 @@ export async function POST(req: NextRequest) {
   try {
     await handleMessage(message, chatId)
   } catch (err) {
-    console.log("[v0] handler error:", (err as Error).message)
-    await sendMessage(chatId, "សូមអភ័យទោស មានបញ្ហាបច្ចេកទេសបន្តិច។ សូមព្យាយាមម្តងទៀត។").catch(() => {})
+    const detail = err instanceof Error ? err.message : String(err)
+    console.log("[v0] handler error:", detail)
+    await sendMessage(
+      chatId,
+      `សូមអភ័យទោស មានបញ្ហាបច្ចេកទេស។\n\n\`\`\`\n${detail}\n\`\`\``,
+    ).catch(() => {})
   }
 
   // Always ack so Telegram doesn't retry.
