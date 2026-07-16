@@ -1,6 +1,13 @@
 import { generateText, type ModelMessage } from "ai"
+import { createGoogleGenerativeAI } from "@ai-sdk/google"
 
-const MODEL = "openai/gpt-4o"
+// Free Google Gemini provider — uses GOOGLE_GENERATIVE_AI_API_KEY (no credit card needed).
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+})
+
+// gemini-2.5-flash: fast, generous free tier, and supports vision (image input).
+const MODEL = google("gemini-2.5-flash")
 
 const SYSTEM_PROMPT = `You are "ThatGPT-5.5", an extremely intelligent, capable, and friendly AI assistant living inside a Telegram bot.
 
